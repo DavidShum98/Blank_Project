@@ -25,6 +25,21 @@
   <p>La suma es {{resultSuma}}</p>
 </form>
 
+<br><br><br>
+
+<form>
+  <input type="text" placeholder="Nombre" name="name" [(ngModel)]="name">
+  <input type="text" placeholder="Apellido" name="lastName" [(ngModel)]="lastName">
+
+  <!-- <input type="submit" (click)="registrar()"> -->
+  <input type="submit" (click)="agregarPersona()">
+
+  <!-- <button (click)="registrar()">Registrar</button> -->
+</form>
+
+<p *ngIf="registro">{{mensaje}} {{name}} {{lastName}}</p>
 
 
-<button type="button" class="btn btn-primary">Primary</button>
+<ul>
+  <li *ngFor="let persona of Personas; let i = index;">{{i+1}} {{persona.nombre}} {{persona.apellido}}</li>
+</ul>
