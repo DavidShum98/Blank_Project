@@ -29,4 +29,17 @@ export class NosotrosComponent {
   }
 
   inputBox = false;
+
+
+num1 = 10;
+num2 = 20;
+resultSuma = 0;
+
+suma(a: number, b: number ){
+  this.resultSuma = this.num1 + this.num2;
+  return this.resultSuma;
+}
+
+
+
 }
