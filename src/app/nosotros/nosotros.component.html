@@ -44,3 +44,20 @@
 <ul>
   <li *ngFor="let persona of Personas; let i = index;">{{i+1}} {{persona.nombre}} {{persona.apellido}}</li>
 </ul>
+
+
+<br><br><br>
+
+
+<h3>Listado de Trabajadores</h3>
+<form action="">
+  <input type="text" [(ngModel)]="nameWorker" name="nameWorker">
+  <input type="number" [(ngModel)]="idWorker" name="idWorker">
+  <input type="any" [(ngModel)]="addresWorker" name="addresWorker">
+  <input type="number" [(ngModel)]="salaryWorker" name="salaryWorker">
+
+  <button (click)="addWorker()">add</button>
+</form>
+<ul>
+  <li *ngFor="let trabajador of this.Trabajadores"> {{trabajador.nombre}} | {{trabajador.id}} | {{trabajador.direccion}} | {{trabajador.salario}} | {{isPobre()}}</li>
+</ul>
