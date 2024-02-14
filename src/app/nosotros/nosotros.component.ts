@@ -32,8 +32,8 @@ export class NosotrosComponent {
   inputBox = false;
 
 
-num1 = 0;
-num2 = 0;
+num1:number = 0;
+num2:number = 0;
 resultSuma = 0;
 
 suma(a: number, b: number ){
