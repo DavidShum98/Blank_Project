@@ -14,3 +14,32 @@
 
   <button (click)="saludar(email.value)">Enviar</button>
 <!-- </form> -->
+
+<br><br><br>
+
+<form action="">
+  Num1: <input type="number" [(ngModel)] = num1 name="num1">
+  Num2: <input type="number" [(ngModel)] = num2 name="num2">
+  <button class="btn btn-primary" (click)="suma(num1, num2)">Suma</button>
+
+  <p>La suma es {{resultSuma}}</p>
+</form>
+
+<br><br><br>
+
+<form>
+  <input type="text" placeholder="Nombre" name="name" [(ngModel)]="name">
+  <input type="text" placeholder="Apellido" name="lastName" [(ngModel)]="lastName">
+
+  <!-- <input type="submit" (click)="registrar()"> -->
+  <input type="submit" (click)="agregarPersona()">
+
+  <!-- <button (click)="registrar()">Registrar</button> -->
+</form>
+
+<p *ngIf="registro">{{mensaje}} {{name}} {{lastName}}</p>
+
+
+<ul>
+  <li *ngFor="let persona of Personas; let i = index;">{{i+1}} {{persona.nombre}} {{persona.apellido}}</li>
+</ul>
