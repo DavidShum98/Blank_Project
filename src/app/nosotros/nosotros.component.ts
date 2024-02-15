@@ -79,9 +79,9 @@ export class NosotrosComponent {
   }
 
   nameWorker: string = "";
-  idWorker: number = 0;
+  idWorker: number;
   addresWorker: any;
-  salaryWorker: number = 0;
+  salaryWorker: number;
 
   addWorker(){
     let worker = new TrabajadorModule(this.nameWorker, this.idWorker, this.addresWorker, this.salaryWorker);
