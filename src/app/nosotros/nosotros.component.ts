@@ -86,5 +86,14 @@ export class NosotrosComponent {
   addWorker(){
     let worker = new TrabajadorModule(this.nameWorker, this.idWorker, this.addresWorker, this.salaryWorker);
     this.Trabajadores.push(worker);
+    this.clearForm()
+  }
+
+  clearForm(){
+    (<HTMLFormElement>document.getElementById("Work")).reset();
+   }
+
+  removeWorker(index: number) {
+    this.Trabajadores.splice(index, 1);
   }
 }
