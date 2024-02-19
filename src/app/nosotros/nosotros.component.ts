@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { TrabajadorModule } from '../trabajador/trabajador.module';
 import { Persona } from './../persona.model';
 import { Component } from '@angular/core';
@@ -69,13 +70,24 @@ export class NosotrosComponent {
   pobre: string ="";
   // pobre: boolean = false;
 
+  // isPobre() {
+  //   for (let trabajador of this.Trabajadores) {
+  //     if (trabajador.salario < 1500) {
+  //       return this.pobre = "este trabajador es pobre";
+  //     }else{
+  //       return this.pobre = "este trabajador no es pobre";
+  //     }
+  //   }
+  //   return undefined;
+  // }
+
   isPobre() {
     for (let trabajador of this.Trabajadores) {
       if (trabajador.salario < 1500) {
-        // trabajador.nombre + "es un pobre"
-        this.pobre = "este trabajador es pobre";
+        return "Este trabajador es pobre";
       }
     }
+    return "No hay trabajadores pobres";
   }
 
   nameWorker: string = "";

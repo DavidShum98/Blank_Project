@@ -1,63 +1,77 @@
 <p>nosotros works!</p>
 
 <!-- <form action="nosotros.component.html"> -->
-  <p>Nombre:</p>
-  <input type="text" placeholder="Nombre" [disabled] = inputBox/>
+<p>Nombre:</p>
+<input type="text" placeholder="Nombre" [disabled]="inputBox" />
 
-  <p>Edad: {{getEdad()}} {{getEdad() <18?"Menor de edad": "Mayor de edad"}}</p>
-  <input type="number" placeholder="Edad" />
+<p>
+  Edad: {{ getEdad() }} {{ getEdad() < 18 ? "Menor de edad" : "Mayor de edad" }}
+</p>
+<input type="number" placeholder="Edad" />
 
-  <p>Correo: {{email.value}}</p>
-  <input type="text" placeholder="Correo" #email/>
+<p>Correo: {{ email.value }}</p>
+<input type="text" placeholder="Correo" #email />
 
-  <br><br>
+<br /><br />
 
-  <button (click)="saludar(email.value)">Enviar</button>
+<button (click)="saludar(email.value)">Enviar</button>
 <!-- </form> -->
 
-<br><br><br>
+<br /><br /><br />
 
 <form action="">
-  Num1: <input type="number" [(ngModel)] = num1 name="num1">
-  Num2: <input type="number" [(ngModel)] = num2 name="num2">
+  Num1: <input type="number" [(ngModel)]="num1" name="num1" /> Num2:
+  <input type="number" [(ngModel)]="num2" name="num2" />
 
   <button class="btn btn-primary" (click)="suma(num1, num2)">Suma</button>
 
-  <p>La suma es {{resultSuma}}</p>
+  <p>La suma es {{ resultSuma }}</p>
 </form>
 
-<br><br><br>
+<br /><br /><br />
 
 <form>
-  <input type="text" placeholder="Nombre" name="name" [(ngModel)]="name">
-  <input type="text" placeholder="Apellido" name="lastName" [(ngModel)]="lastName">
+  <input type="text" placeholder="Nombre" name="name" [(ngModel)]="name" />
+  <input
+    type="text"
+    placeholder="Apellido"
+    name="lastName"
+    [(ngModel)]="lastName"
+  />
 
   <!-- <input type="submit" (click)="registrar()"> -->
-  <input type="submit" (click)="agregarPersona()">
+  <input type="submit" (click)="agregarPersona()" />
 
   <!-- <button (click)="registrar()">Registrar</button> -->
 </form>
 
-<p *ngIf="registro">{{mensaje}} {{name}} {{lastName}}</p>
-
+<p *ngIf="registro">{{ mensaje }} {{ name }} {{ lastName }}</p>
 
 <ul>
-  <li *ngFor="let persona of Personas; let i = index;">{{i+1}} {{persona.nombre}} {{persona.apellido}}</li>
+  <li *ngFor="let persona of Personas; let i = index">
+    {{ i + 1 }} {{ persona.nombre }} {{ persona.apellido }}
+  </li>
 </ul>
 
-
-<br><br><br>
-
+<br /><br /><br />
 
 <h3>Listado de Trabajadores</h3>
 <form action="" id="Work">
-  <input type="text" [(ngModel)]="nameWorker" name="nameWorker">
-  <input type="number" [(ngModel)]="idWorker" name="idWorker">
-  <input type="any" [(ngModel)]="addresWorker" name="addresWorker">
-  <input type="number" [(ngModel)]="salaryWorker" name="salaryWorker">
+  <input type="text" [(ngModel)]="nameWorker" name="nameWorker" />
+  <input type="number" [(ngModel)]="idWorker" name="idWorker" />
+  <input type="any" [(ngModel)]="addresWorker" name="addresWorker" />
+  <input type="number" [(ngModel)]="salaryWorker" name="salaryWorker" />
 
   <button (click)="addWorker()">add</button>
 </form>
+
 <ul>
-  <li *ngFor="let trabajador of this.Trabajadores; let i = index"> <span [ngClass]="{nameClass: trabajador.nombre=='david'}"> {{trabajador.nombre}} </span> | {{trabajador.id}} | {{trabajador.direccion}} | {{trabajador.salario}} | {{isPobre()}} <button (click)="removeWorker(i)">Eliminar</button></li>
+  <li *ngFor="let trabajador of Trabajadores; let i = index">
+    <span [ngClass]="{ nameClass: trabajador.isDavid }">
+      {{ trabajador.nombre }}
+    </span>
+    | {{ trabajador.id }} | {{ trabajador.direccion }} |
+    {{ trabajador.salario }} | {{ trabajador.isPobre }}
+    <button (click)="removeWorker(i)">Eliminar</button>
+  </li>
 </ul>
