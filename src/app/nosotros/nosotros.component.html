@@ -71,7 +71,8 @@
       {{ trabajador.nombre }}
     </span>
     | {{ trabajador.id }} | {{ trabajador.direccion }} |
-    {{ trabajador.salario }} | {{ trabajador.isPobre }}
+    {{ trabajador.salario }} | {{isPobre(trabajador.salario)}}
     <button (click)="removeWorker(i)">Eliminar</button>
   </li>
 </ul>
+<!-- {{ trabajador.isPobre }}  -->
